@@ -1,7 +1,11 @@
 "use strict";
 
-//Template Literals
+//Object Short Syntax
 var nome = "Diego";
-var idade = 31; // console.log("Meu nome � "+nome+" e tenho "+idade+" anos");
-
-console.log("Meu nome \uFFFD ".concat(nome, " e tenho ").concat(idade, " anos."));
+var idade = 31;
+var user = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Programmable'
+};
+console.log(user);

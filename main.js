@@ -1,30 +1,44 @@
-//ARRAYS
-const arr = [1, 3, 4, 5, 8, 9];
+//Arrow Function
+const arr = [1, 3, 4, 5, 6];
 
-//MAP - Percorre o array e retorna uma nova informação
-const newArr = arr.map(function(item, index){
-    return item + index;
-});
+// const newArr = arr.map(function(item){
+//     return item * 3;
+// });
 
-console.log(newArr);
+//versão 1 - (1 parametro)
+// const newArr = arr.map((item) => {
+//     return item * 3;
+// });
 
-//Reduce - Consome todo o array e transforma em uma unica informação
-const sum = arr.reduce(function(total, next){
-    return total + next;
-});
+// console.log(newArr);
 
-console.log(sum);
+//versao 2 - (1 parametro)
+// const newArr = arr.map(item => {
+//     return item * 3;
+// });
 
-//Filter - percorre o array e retorna apenas os que combinem com o filtro passado (true)
-const filter = arr.filter(function(item){
-    return item % 2 === 0;
-});
+// console.log(newArr);
 
-console.log(filter);
+//versao 3 - (1 parametro)
+// const newArr = arr.map(item => item * 3);
 
-//Find - busca uma informação dentro do array
-const find = arr.find(function(item){
-    return item === 2;
-});
+// console.log(newArr);
 
-console.log(find);
+//Criando Funcao diretamente com ArrowFunction
+const TesteArrowFunction = () => {
+    console.log("Esta é uma função criada com Arrow Function");
+}
+
+TesteArrowFunction();
+
+const teste = () => 'Diego';
+console.log(teste());
+
+const teste2 = () => {
+    return {
+        nome: 'Diego',
+        idade: 31
+    }
+}
+
+console.log(teste2());

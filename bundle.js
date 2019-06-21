@@ -1,24 +1,41 @@
 "use strict";
 
-//ARRAYS
-var arr = [1, 3, 4, 5, 8, 9]; //MAP - Percorre o array e retorna uma nova informa��o
+//Arrow Function
+var arr = [1, 3, 4, 5, 6]; // const newArr = arr.map(function(item){
+//     return item * 3;
+// });
+//vers�o 1 - (1 parametro)
+// const newArr = arr.map((item) => {
+//     return item * 3;
+// });
+// console.log(newArr);
+//versao 2 - (1 parametro)
+// const newArr = arr.map(item => {
+//     return item * 3;
+// });
+// console.log(newArr);
+//versao 3 - (1 parametro)
+// const newArr = arr.map(item => item * 3);
+// console.log(newArr);
+//Criando Funcao diretamente com ArrowFunction
 
-var newArr = arr.map(function (item, index) {
-  return item + index;
-});
-console.log(newArr); //Reduce - Consome todo o array e transforma em uma unica informa��o
+var TesteArrowFunction = function TesteArrowFunction() {
+  console.log("Esta � uma fun��o criada com Arrow Function");
+};
 
-var sum = arr.reduce(function (total, next) {
-  return total + next;
-});
-console.log(sum); //Filter - percorre o array e retorna apenas os que combinem com o filtro passado (true)
+TesteArrowFunction();
 
-var filter = arr.filter(function (item) {
-  return item % 2 === 0;
-});
-console.log(filter); //Find - busca uma informa��o dentro do array
+var teste = function teste() {
+  return 'Diego';
+};
 
-var find = arr.find(function (item) {
-  return item === 2;
-});
-console.log(find);
+console.log(teste());
+
+var teste2 = function teste2() {
+  return {
+    nome: 'Diego',
+    idade: 31
+  };
+};
+
+console.log(teste2());

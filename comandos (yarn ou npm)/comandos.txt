@@ -1,0 +1,6 @@
+#O yarn add pode ser substituido por npm install
+yarn init
+yarn add @babel/cli
+yarn add @babel/preset-env
+yarn add @babel/core
+yarn add @babel/plugin-proposal-object-rest-spread

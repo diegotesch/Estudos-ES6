@@ -1,16 +1,30 @@
-//nao pode ter seu valor reatribuido apenas mutado
-// const usuario = {nome: "Diego"};
+//ARRAYS
+const arr = [1, 3, 4, 5, 8, 9];
 
-// usuario.nome = 'Cleiton';
+//MAP - Percorre o array e retorna uma nova informação
+const newArr = arr.map(function(item, index){
+    return item + index;
+});
 
-// console.log(usuario);
+console.log(newArr);
 
-function teste(x){
-    let y = 2;
+//Reduce - Consome todo o array e transforma em uma unica informação
+const sum = arr.reduce(function(total, next){
+    return total + next;
+});
 
-    if(x > 5){
-        console.log(x, y);
-    }
-}
+console.log(sum);
 
-teste(10);
+//Filter - percorre o array e retorna apenas os que combinem com o filtro passado (true)
+const filter = arr.filter(function(item){
+    return item % 2 === 0;
+});
+
+console.log(filter);
+
+//Find - busca uma informação dentro do array
+const find = arr.find(function(item){
+    return item === 2;
+});
+
+console.log(find);

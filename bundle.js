@@ -6,25 +6,26 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-alert('Teste');
-
-var Teste =
+var Matematica =
 /*#__PURE__*/
 function () {
-  function Teste() {
-    _classCallCheck(this, Teste);
+  function Matematica() {
+    _classCallCheck(this, Matematica);
   }
 
-  _createClass(Teste, [{
-    key: "metodo",
-    value: function metodo() {}
-  }, {
-    key: "outro",
-    value: function outro() {}
-  }, {
-    key: "novoTeste",
-    value: function novoTeste() {}
+  _createClass(Matematica, null, [{
+    key: "soma",
+    //metodo estatico n�o pode depender de nenhum elemento da classe, apenas executar e retornar algo
+    value: function soma(a, b) {
+      return a + b;
+    }
   }]);
 
-  return Teste;
+  return Matematica;
 }();
+
+console.log(Matematica.soma(1, 1));
+console.log(Matematica.soma(1, 2));
+console.log(Matematica.soma(1, 3));
+console.log(Matematica.soma(1, 4));
+console.log(Matematica.soma(1, 5));

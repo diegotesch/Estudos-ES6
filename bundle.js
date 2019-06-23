@@ -91,7 +91,8 @@ console.log(admin.isAdmin());
 // }
 // console.log( mostraInfo(usuario) );
 //Exercicio 5
-var arr = [1, 2, 3, 4, 5, 6]; //5.1
+// const arr = [1, 2, 3, 4, 5, 6];
+//5.1
 // const [ x, ...y ] = arr;
 // console.log(x);
 // console.log(y);
@@ -115,3 +116,18 @@ var arr = [1, 2, 3, 4, 5, 6]; //5.1
 // console.log(usuario);
 // console.log(usuario2);
 // console.log(usuario3);
+//Exercicio 6
+// const usuario = 'Diego';
+// const idade = 31;
+// console.log(`O usuário ${usuario} possui ${idade} anos`);
+//Exercicio 7
+var nome = 'Diego';
+var idade = 31;
+var usuario = {
+  nome: nome,
+  idade: idade,
+  cidade: 'Colatina'
+};
+console.log(usuario.nome);
+console.log(usuario.idade);
+console.log(usuario.cidade);

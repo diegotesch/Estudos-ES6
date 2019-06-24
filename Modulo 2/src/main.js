@@ -1,32 +1,18 @@
-const minhaPromise = () => new Promise((resolve, reject) => {
-    setTimeout(() => { resolve('OK') }, 2000);
-});
+import axios from 'axios';
 
-//MODELO ANTIGO - DEPRECIADO
-// minhaPromise()
-//     .then(response => {
-//         console.log(response);
-//     })
-//     .catch(err => {
+class Api{
+    static async getUserInfo(username){
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
 
-//     });
-
-//Obs: Await sempre seve ser utilizado dentro de uma função asincrona
-// async function executaPromise(){
-//     console.log( await minhaPromise() );
-//     console.log( await minhaPromise() );
-//     console.log( await minhaPromise() );
-//     console.log( await minhaPromise() );
-//     console.log( await minhaPromise() );
-// }
-
-//exemplo acima com arrow function
-const executaPromise = async () => {
-    console.log( await minhaPromise() );
-    console.log( await minhaPromise() );
-    console.log( await minhaPromise() );
-    console.log( await minhaPromise() );
-    console.log( await minhaPromise() );
+            console.log(response);
+        }catch (err){
+            console.log('Erro na API');
+        }
+        
+        
+    }
 }
 
-executaPromise();
+Api.getUserInfo('diegoteschfeswsw');
+Api.getUserInfo('diegotesch');

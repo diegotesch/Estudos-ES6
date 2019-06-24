@@ -16,32 +16,51 @@ class App{
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    setLoading(loading = true){
+        if(loading === true){
+            let loadingEl = document.createElement('span');
+            loadingEl.appendChild(document.createTextNode('Carregando...'));
+            loadingEl.setAttribute('id', 'loading');
+
+            this.formEl.appendChild(loadingEl);
+        }else{
+            document.getElementById('loading').remove();
+        }
+    }
+
     async addRepository(event){
         event.preventDefault();
 
         const repoInput = this.inputEl.value;
 
-        //caso não haja nada escrito para a execução da funcao
+        //caso nï¿½o haja nada escrito para a execuï¿½ï¿½o da funcao
         if(repoInput.length === 0)
             return;
 
-        const response = await api.get(`/repos/${repoInput}`);
+        this.setLoading();
 
-        //utilizando a desestruturação, remove os elementos necessários do objeto
-        const { name, description, html_url, owner: {  avatar_url } } = response.data;
+        try{
+            const response = await api.get(`/repos/${repoInput}`);
 
-        //utilizando as shortsyntax passa as variaveis retiradas para os elementos
-        this.repositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url
-        });
+            //utilizando a desestruturaï¿½ï¿½o, remove os elementos necessï¿½rios do objeto
+            const { name, description, html_url, owner: {  avatar_url } } = response.data;
 
-        this.inputEl.value = '';
+            //utilizando as shortsyntax passa as variaveis retiradas para os elementos
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url
+            });
 
-        this.render();
+            this.inputEl.value = '';
 
+            this.render();
+        }catch(err){
+            alert('O repositÃ³rio nÃ£o existe!');
+        }
+
+        this.setLoading(false);
     }
 
     render(){
